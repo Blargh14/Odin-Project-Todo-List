@@ -2,7 +2,24 @@ const projects = document.querySelector("#projects");
 const content = document.querySelector("#content");
 
 export function populateProjects(projectList) {
-    
+    projects.textContent = "";
+
+    projectList.forEach((project) => {
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("project");
+
+        const titleP = document.createElement("p");
+        titleP.classList.add("title");
+        titleP.textContent = project.title;
+        projectDiv.appendChild(titleP);
+
+        const descP = document.createElement("p");
+        descP.classList.add("description");
+        descP.textContent = project.description;
+        projectDiv.appendChild(descP);
+
+        projects.appendChild(projectDiv);
+    });
 }
 
 export function populateContent(project) {
@@ -37,8 +54,6 @@ export function populateContent(project) {
         priorityP.classList.add("duedate");
         priorityP.textContent = "Importance: " + todo.priority;
         infoBar.appendChild(priorityP);
-
-        // todoDiv.textContent = todo.title + todo.description + todo.dueDate + todo.priority + todo.checklist;
 
         content.appendChild(todoDiv);
     });

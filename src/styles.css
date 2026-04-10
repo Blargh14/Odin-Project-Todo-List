@@ -14,11 +14,13 @@ p {
 #left {
     background-color: #DDDDDD;
     flex-basis: 20%;
+    overflow: auto;
 }
 
 #right {
     background-color: #EFEFEF;
     flex-grow: 1;
+    overflow: auto;
 }
 
 h2 {
@@ -30,8 +32,21 @@ h2 {
     flex-direction: column;
 }
 
+#projects {
+    display: flex;
+    flex-direction: column;
+}
+
 .todoitem {
     background-color: white;
+    margin: 8px;
+    padding: 5px;
+    border: solid 3px #BBBBBB;
+    border-radius: 5px;
+}
+
+.project {
+    background-color: lightblue;
     margin: 8px;
     padding: 5px;
     border: solid 3px #BBBBBB;
