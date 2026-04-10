@@ -7,12 +7,29 @@ body {
     height: 100vh;
 }
 
-#projects {
+#left {
     background-color: #DDDDDD;
     flex-basis: 20%;
 }
 
-#content {
+#right {
     background-color: #EFEFEF;
     flex-grow: 1;
+}
+
+h2 {
+    text-align: center ;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+.todoitem {
+    background-color: white;
+    margin: 8px;
+    padding: 5px;
+    border: solid 3px #BBBBBB;
+    border-radius: 5px;
 }

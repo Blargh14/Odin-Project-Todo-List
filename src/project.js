@@ -3,7 +3,7 @@ export function newProject() {
     let description = "";
     let todoList = [];
 
-    const addTodoItem = (item) => { todoList.append(item) };
+    const addTodoItem = (item) => { todoList.push(item) };
     const removeToDoItem = (removeTitle) => {
         todoList = todoList.filter((item) => item.title != removeTitle);
     }
