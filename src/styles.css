@@ -32,7 +32,7 @@ h2 {
     flex-direction: column;
 }
 
-#projects {
+#projectsContainer {
     display: flex;
     flex-direction: column;
 }
@@ -51,6 +51,11 @@ h2 {
     padding: 5px;
     border: solid 3px #BBBBBB;
     border-radius: 5px;
+}
+
+.selectedProject {
+    border-color: black;
+    background-color: rgb(96, 158, 179);
 }
 
 .title {

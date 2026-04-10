@@ -1,8 +1,8 @@
-const projects = document.querySelector("#projects");
+const projectsContainer = document.querySelector("#projectsContainer");
 const content = document.querySelector("#content");
 
 export function populateProjects(projectList) {
-    projects.textContent = "";
+    projectsContainer.textContent = "";
 
     projectList.forEach((project) => {
         const projectDiv = document.createElement("div");
@@ -18,7 +18,20 @@ export function populateProjects(projectList) {
         descP.textContent = project.description;
         projectDiv.appendChild(descP);
 
-        projects.appendChild(projectDiv);
+        projectDiv.addEventListener("click", (e) => {
+            const projects = document.querySelectorAll(".project");
+            projects.forEach((projectInList) => {
+                if (projectInList.classList.contains("selectedProject")) {
+                    projectInList.classList.remove("selectedProject");
+                };
+            });
+
+            projectDiv.classList.add("selectedProject");
+
+            populateContent(project);
+        });
+
+        projectsContainer.appendChild(projectDiv);
     });
 }
 

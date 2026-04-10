@@ -1,7 +1,7 @@
 import "./styles.css";
 import {newTodo} from "./todoitem.js";
 import {newProject} from "./project.js";
-import {populateContent, populateProjects} from "./display.js";
+import {populateProjects} from "./display.js";
 
 const placeHolderCheck = true;
 
@@ -16,6 +16,5 @@ if (placeHolderCheck) {
 
     placeHolderProject.addTodoItem(placeHolderToDo);
     
-    populateContent(placeHolderProject);
     populateProjects([placeHolderProject]);
 }
