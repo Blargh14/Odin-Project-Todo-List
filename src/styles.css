@@ -2,6 +2,10 @@ body {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 #container {
     display: flex;
     height: 100vh;
@@ -32,4 +36,17 @@ h2 {
     padding: 5px;
     border: solid 3px #BBBBBB;
     border-radius: 5px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.infobar {
+    display: flex;
+}
+
+.duedate {
+    margin-right: 10px;
 }
