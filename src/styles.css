@@ -51,6 +51,7 @@ h2 {
     padding: 5px;
     border: solid 3px #BBBBBB;
     border-radius: 5px;
+    text-align: center;
 }
 
 .selectedProject {
