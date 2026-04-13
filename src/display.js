@@ -55,11 +55,11 @@ export function populateContent(project) {
         todoDiv.appendChild(descP);
 
         const infoBar = document.createElement("div");
-        infoBar.classList.add("infobar");
+        infoBar.classList.add("infoBar");
         todoDiv.appendChild(infoBar);
 
         const dateP = document.createElement("p");
-        dateP.classList.add("duedate");
+        dateP.classList.add("dueDate");
         dateP.textContent = "Due: " + todo.dueDate;
         infoBar.appendChild(dateP);
 
@@ -70,5 +70,4 @@ export function populateContent(project) {
 
         content.appendChild(todoDiv);
     });
-
 }

@@ -1,6 +1,5 @@
 export function newProject() {
     let title = "";
-    let description = "";
     let todoList = [];
 
     const addTodoItem = (item) => { todoList.push(item) };
@@ -8,5 +7,5 @@ export function newProject() {
         todoList = todoList.filter((item) => item.title != removeTitle);
     }
 
-    return {title, description, todoList, addTodoItem, removeToDoItem};
+    return {title, todoList, addTodoItem, removeToDoItem};
 }

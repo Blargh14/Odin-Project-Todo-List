@@ -2,11 +2,10 @@ import {newTodo} from "./todoitem.js";
 import {newProject} from "./project.js";
 
 if (typeof(localStorage.projects) == "undefined") {
-    console.log("reached");
-    const placeHolderProject = newProject("A Project Title");
+    const placeHolderProject = newProject();
     placeHolderProject.title = "A Project Title";
 
-    const placeHolderToDo = newTodo("12:00", 0, ["eyo"]);
+    const placeHolderToDo = newTodo();
     placeHolderToDo.title = "Title of What to Do";
     placeHolderToDo.description = "A description of that thing";
     placeHolderToDo.dueDate = "12:00";
@@ -16,6 +15,15 @@ if (typeof(localStorage.projects) == "undefined") {
     localStorage.projects = JSON.stringify([placeHolderProject]);
 }
 
+const projects = JSON.parse(localStorage.projects);
+
 export function getProjects() {
-    return JSON.parse(localStorage.projects);
-};
+    return projects;
+}
+
+export function addProject(title) {
+    const project = newProject();
+    project.title = title;
+    projects.push(project);
+    localStorage.projects = JSON.stringify(projects);
+}
