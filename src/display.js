@@ -1,5 +1,8 @@
+import { removeProject, getProjects } from "./storage.js";
+
 const projectsContainer = document.querySelector("#projectsContainer");
 const content = document.querySelector("#content");
+export let selectedProject = false;
 
 export function populateProjects(projectList) {
     projectsContainer.textContent = "";
@@ -28,6 +31,7 @@ export function populateProjects(projectList) {
 
             projectDiv.classList.add("selectedProject");
 
+            selectedProject = project;
             populateContent(project);
         });
 
@@ -37,6 +41,24 @@ export function populateProjects(projectList) {
 
 export function populateContent(project) {
     content.textContent = "";
+
+    const removeProjectButton = document.createElement("button");
+    removeProjectButton.id = "removeProjectButton";
+    removeProjectButton.textContent = "- Remove Project";
+    content.appendChild(removeProjectButton);
+
+    const addTodoButton = document.createElement("button");
+    addTodoButton.id = "addTodoButton";
+    addTodoButton.command = "show-modal";
+    addTodoButton.setAttribute("commandfor", "newTodoContainer");
+    addTodoButton.textContent = "+ Add Todo";
+    content.appendChild(addTodoButton);
+
+    removeProjectButton.addEventListener("click", (e) => {
+        removeProject(selectedProject.id);
+        populateProjects(getProjects());
+        content.textContent = "";
+    });
 
     project.todoList = project.todoList.sort((todo, lastTodo) => { return lastTodo.priority - todo.priority });
 

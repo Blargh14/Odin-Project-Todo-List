@@ -10,17 +10,31 @@
 <body>
     <dialog id="newProjectContainer">
         <form id="newProjectForm">
-            <label for="projectTitle">Enter project title:</label><br>
-            <input id="projectTitle" name=projectTitle type="text">
+            <label for="projectTitle">Enter new project title:</label><br>
+            <input id="projectTitle" name="projectTitle" type="text">
             <input id="add-button" type="submit" value="Add">
         </form>
         <button commandfor="newProjectContainer" command="close">Close</button>
+    </dialog>
+    <dialog id="newTodoContainer">
+        <form id="newTodoForm">
+            <label for="todoTitle">Enter new todo title:</label><br>
+            <input id="todoTitle" name="todoTitle" type="text"><br>
+            <label for="todoDesc">Enter todo description:</label><br>
+            <input id="todoDesc" name="todoDesc" type="text"><br>
+            <label for="todoDate">Enter due date</label><br>
+            <input id="todoDate" name="todoDate" type="text"><br>
+            <label for="todoPriority">Enter priority number</label><br>
+            <input id="todoPriority" name="todoPriority" type="number"><br>
+            <input id="add-button" type="submit" value="Add">
+        </form>
+        <button commandfor="newTodoContainer" command="close">Close</button>
     </dialog>
     <div id="container">
         <div id="left">
             <h2>Projects</h2>
             <div id="projectsContainer"></div>
-            <button class="project" id="addProject" command="show-modal" commandfor="newProjectContainer">+</button>
+            <button class="project" id="addProject" command="show-modal" commandfor="newProjectContainer">+ New Project</button>
         </div>
         <div id="right">
             <h2>Todo:</h2>

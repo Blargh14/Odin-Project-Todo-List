@@ -79,9 +79,30 @@ h2 {
 
 #addProject {
     font-weight: bold;
-    width: 40%;
     align-self: center;
     background-color: lightgreen;
+}
+
+#removeProjectButton {
+    background-color: lightcoral;
+    margin: 8px;
+    padding: 5px;
+    border: solid 3px #BBBBBB;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#addTodoButton {
+    background-color: lightgreen;
+    margin: 8px;
+    padding: 5px;
+    border: solid 3px #BBBBBB;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
