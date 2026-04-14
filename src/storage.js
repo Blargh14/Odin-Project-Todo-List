@@ -1,5 +1,5 @@
 import {newTodo} from "./todoitem.js";
-import {newProject} from "./project.js";
+import newProject, {addFunctionsToStoredProject} from "./project.js";
 
 if (typeof(localStorage.projects) == "undefined" || localStorage.projects == "[]") {
     const placeHolderProject = newProject();
@@ -17,6 +17,10 @@ if (typeof(localStorage.projects) == "undefined" || localStorage.projects == "[]
 
 let projects = JSON.parse(localStorage.projects);
 
+projects.forEach((project) => {
+    addFunctionsToStoredProject(project);
+});
+
 export function getProjects() {
     return projects;
 }
@@ -25,6 +29,10 @@ export function addProject(title) {
     const project = newProject();
     project.title = title;
     projects.push(project);
+    localStorage.projects = JSON.stringify(projects);
+}
+
+export function updateProjects() {
     localStorage.projects = JSON.stringify(projects);
 }
 

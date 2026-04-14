@@ -1,5 +1,5 @@
 import {populateProjects, populateContent} from "./display.js";
-import {addProject, getProjects} from "./storage.js";
+import {addProject, getProjects, updateProjects} from "./storage.js";
 import { newTodo } from "./todoitem.js";
 import { selectedProject } from "./display.js";
 
@@ -30,11 +30,13 @@ todoForm.addEventListener("submit", (e) => {
     todo.title = formData.get("todoTitle");
     todo.description = formData.get("todoDesc");
     todo.dueDate = formData.get("todoDate");
-    todo.priority = formData.get("priority");
+    todo.priority = formData.get("todoPriority");
 
     selectedProject.addTodoItem(todo);
 
-    populateContent();
+    updateProjects();
+
+    populateContent(selectedProject);
 
     todoForm.reset();
 
