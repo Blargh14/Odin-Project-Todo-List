@@ -152,3 +152,7 @@ h2 {
 .editButton:hover {
     background-color: rgb(112, 198, 226);
 }
+
+.pastDue {
+    background-color: red;
+}

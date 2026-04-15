@@ -1,5 +1,5 @@
 import { removeProject, getProjects, updateProjects } from "./storage.js";
-import { format } from "date-fns";
+import { format, isPast } from "date-fns";
 
 const projectsContainer = document.querySelector("#projectsContainer");
 const content = document.querySelector("#content");
@@ -72,6 +72,10 @@ export function populateContent(project) {
     project.todoList.forEach((todo) => {
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todoitem");
+
+        if (isPast(todo.dueDate)) {
+            todoDiv.classList.add("pastDue");
+        }
 
         const titleP = document.createElement("p");
         titleP.classList.add("title");
