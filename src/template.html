@@ -30,6 +30,20 @@
         </form>
         <button commandfor="newTodoContainer" command="close">Close</button>
     </dialog>
+    <dialog id="editTodoContainer">
+        <form id="editTodoForm">
+            <label for="editTodoTitle">Enter new todo title:</label><br>
+            <input id="editTodoTitle" name="editTodoTitle" type="text"><br>
+            <label for="editTodoDesc">Enter todo description:</label><br>
+            <input id="editTodoDesc" name="editTodoDesc" type="text"><br>
+            <label for="editTodoDate">Enter due date</label><br>
+            <input id="editTodoDate" name="editTodoDate" type="datetime-local" required><br>
+            <label for="editTodoPriority">Enter priority number</label><br>
+            <input id="editTodoPriority" name="editTodoPriority" type="number"><br>
+            <input id="edit-add-button" type="submit" value="Confirm">
+        </form>
+        <button commandfor="editTodoContainer" command="close">Close</button>
+    </dialog>
     <div id="container">
         <div id="left">
             <h2>Projects</h2>

@@ -4,6 +4,12 @@ import { format } from "date-fns";
 const projectsContainer = document.querySelector("#projectsContainer");
 const content = document.querySelector("#content");
 export let selectedProject = false;
+export let selectedTodo = false;
+
+const formTitle = document.querySelector("#editTodoTitle");
+const formDesc = document.querySelector("#editTodoDesc");
+const formDate = document.querySelector("#editTodoDate");
+const formPriority = document.querySelector("#editTodoPriority");
 
 export function populateProjects(projectList) {
     projectsContainer.textContent = "";
@@ -91,13 +97,28 @@ export function populateContent(project) {
         priorityP.textContent = "Priority: " + todo.priority;
         collapsible.appendChild(priorityP);
 
+        const editButton = document.createElement("button");
+        editButton.classList.add("editButton");
+        editButton.textContent = "Edit";
+        editButton.command = "show-modal";
+        editButton.setAttribute("commandfor", "editTodoContainer");
+        collapsible.appendChild(editButton);
+
+        editButton.addEventListener("click", (e) => {
+            formTitle.value = todo.title
+            formDesc.value = todo.description
+            formDate.value = format(todo.dueDate, "yyyy-MM-dd hh:mm");
+            formPriority.value = todo.priority;
+            selectedTodo = todo;
+        });
+
         const deleteButton = document.createElement("button");
         deleteButton.classList.add("removeTodoButton");
         deleteButton.textContent = "x";
         todoDiv.append(deleteButton);
 
         deleteButton.addEventListener("click", (e) => {
-            selectedProject.removeToDoItem(todo.id);
+            selectedProject.removeTodoItem(todo.id);
             populateContent(selectedProject);
             updateProjects();
         });

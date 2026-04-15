@@ -1,5 +1,5 @@
 function addTodoItemFunction(item) { this.todoList.push(item) };
-function removeToDoItemFunction(id) {
+function removeTodoItemFunction(id) {
     this.todoList = this.todoList.filter((item) => item.id != id);
 }
 
@@ -8,12 +8,12 @@ export default function newProject() {
     let title = "";
     let todoList = [];
     const addTodoItem = addTodoItemFunction;
-    const removeToDoItem = removeToDoItemFunction;
+    const removeTodoItem = removeTodoItemFunction;
        
-    return {id, title, todoList, addTodoItem, removeToDoItem};
+    return {id, title, todoList, addTodoItem, removeTodoItem};
 }
 
 export function addFunctionsToStoredProject(project) {
     project.addTodoItem = addTodoItemFunction;
-    project.removeToDoItem = removeToDoItemFunction;
+    project.removeTodoItem = removeTodoItemFunction;
 }

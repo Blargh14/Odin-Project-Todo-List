@@ -143,5 +143,12 @@ h2 {
 
 .removeTodoButton:hover {
     background-color: rgb(231, 50, 50);
+}
 
+.editButton {
+    background-color: lightblue;
+}
+
+.editButton:hover {
+    background-color: rgb(112, 198, 226);
 }
