@@ -156,3 +156,7 @@ h2 {
 .pastDue {
     background-color: red;
 }
+
+.pastDue:hover {
+    background-color: rgb(185, 0, 0);
+}
