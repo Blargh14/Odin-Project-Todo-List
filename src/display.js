@@ -92,5 +92,9 @@ export function populateContent(project) {
         collapsible.appendChild(priorityP);
 
         content.appendChild(todoDiv);
+
+        todoDiv.addEventListener("click", (e) => {
+            collapsible.classList.toggle("show");
+        });
     });
 }

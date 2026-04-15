@@ -125,3 +125,7 @@ h2 {
 .todoCollapse {
     display: none;
 }
+
+.show {
+    display: block;
+}
