@@ -1,4 +1,5 @@
 import { removeProject, getProjects } from "./storage.js";
+import { format } from "date-fns";
 
 const projectsContainer = document.querySelector("#projectsContainer");
 const content = document.querySelector("#content");
@@ -71,24 +72,24 @@ export function populateContent(project) {
         titleP.textContent = todo.title;
         todoDiv.appendChild(titleP);
 
+        const dateP = document.createElement("p");
+        dateP.classList.add("dueDate");
+        dateP.textContent = "Due: " + format(todo.dueDate, "dd-MMM-yyyy HH:mm");
+        todoDiv.appendChild(dateP);
+
+        const collapsible = document.createElement("div");
+        collapsible.classList.add("todoCollapse");
+        todoDiv.appendChild(collapsible);
+        
         const descP = document.createElement("p");
         descP.classList.add("description");
         descP.textContent = todo.description;
-        todoDiv.appendChild(descP);
-
-        const infoBar = document.createElement("div");
-        infoBar.classList.add("infoBar");
-        todoDiv.appendChild(infoBar);
-
-        const dateP = document.createElement("p");
-        dateP.classList.add("dueDate");
-        dateP.textContent = "Due: " + todo.dueDate;
-        infoBar.appendChild(dateP);
+        collapsible.appendChild(descP);
 
         const priorityP = document.createElement("p");
         priorityP.classList.add("duedate");
-        priorityP.textContent = "Importance: " + todo.priority;
-        infoBar.appendChild(priorityP);
+        priorityP.textContent = "Priority: " + todo.priority;
+        collapsible.appendChild(priorityP);
 
         content.appendChild(todoDiv);
     });

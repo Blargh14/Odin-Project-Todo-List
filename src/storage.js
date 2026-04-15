@@ -8,7 +8,7 @@ if (typeof(localStorage.projects) == "undefined" || localStorage.projects == "[]
     const placeHolderToDo = newTodo();
     placeHolderToDo.title = "Title of What to Do";
     placeHolderToDo.description = "A description of that thing";
-    placeHolderToDo.dueDate = "12:00";
+    placeHolderToDo.dueDate = Date.now();
 
     placeHolderProject.addTodoItem(placeHolderToDo);
 
