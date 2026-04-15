@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two do's?</title>
+<script defer src="main.js"></script></head>
+
+<body>
+    <dialog id="newProjectContainer">
+        <form id="newProjectForm">
+            <label for="projectTitle">Enter new project title:</label><br>
+            <input id="projectTitle" name="projectTitle" type="text">
+            <input id="add-button" type="submit" value="Add">
+        </form>
+        <button commandfor="newProjectContainer" command="close">Close</button>
+    </dialog>
+    <dialog id="newTodoContainer">
+        <form id="newTodoForm">
+            <label for="todoTitle">Enter new todo title:</label><br>
+            <input id="todoTitle" name="todoTitle" type="text"><br>
+            <label for="todoDesc">Enter todo description:</label><br>
+            <input id="todoDesc" name="todoDesc" type="text"><br>
+            <label for="todoDate">Enter due date</label><br>
+            <input id="todoDate" name="todoDate" type="datetime-local" required><br>
+            <label for="todoPriority">Enter priority number</label><br>
+            <input id="todoPriority" name="todoPriority" type="number"><br>
+            <input id="add-button" type="submit" value="Add">
+        </form>
+        <button commandfor="newTodoContainer" command="close">Close</button>
+    </dialog>
+    <dialog id="editTodoContainer">
+        <form id="editTodoForm">
+            <label for="editTodoTitle">Enter new todo title:</label><br>
+            <input id="editTodoTitle" name="editTodoTitle" type="text"><br>
+            <label for="editTodoDesc">Enter todo description:</label><br>
+            <input id="editTodoDesc" name="editTodoDesc" type="text"><br>
+            <label for="editTodoDate">Enter due date</label><br>
+            <input id="editTodoDate" name="editTodoDate" type="datetime-local" required><br>
+            <label for="editTodoPriority">Enter priority number</label><br>
+            <input id="editTodoPriority" name="editTodoPriority" type="number"><br>
+            <input id="edit-add-button" type="submit" value="Confirm">
+        </form>
+        <button commandfor="editTodoContainer" command="close">Close</button>
+    </dialog>
+    <div id="container">
+        <div id="left">
+            <h2>Projects</h2>
+            <div id="projectsContainer"></div>
+            <button class="project" id="addProject" command="show-modal" commandfor="newProjectContainer">+ New Project</button>
+        </div>
+        <div id="right">
+            <h2>Todo:</h2>
+            <div id="content"></div>
+        </div>
+    </div>
+</body>
+
+</html>
