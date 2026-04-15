@@ -45,6 +45,7 @@ h2 {
     padding: 5px;
     border: solid 3px #BBBBBB;
     border-radius: 5px;
+    position: relative;
 }
 
 .todoitem:hover {
@@ -128,4 +129,19 @@ h2 {
 
 .show {
     display: block;
+}
+
+.removeTodoButton {
+    position: absolute;
+    background-color: lightcoral;
+    border: solid 3px #BBBBBB;
+    right: 5px;
+    top: 50%;
+    box-sizing: border-box;
+    transform: translate(0, -50%);
+}
+
+.removeTodoButton:hover {
+    background-color: rgb(231, 50, 50);
+
 }

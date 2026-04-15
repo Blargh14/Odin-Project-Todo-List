@@ -1,4 +1,4 @@
-import { removeProject, getProjects } from "./storage.js";
+import { removeProject, getProjects, updateProjects } from "./storage.js";
 import { format } from "date-fns";
 
 const projectsContainer = document.querySelector("#projectsContainer");
@@ -90,6 +90,17 @@ export function populateContent(project) {
         priorityP.classList.add("duedate");
         priorityP.textContent = "Priority: " + todo.priority;
         collapsible.appendChild(priorityP);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("removeTodoButton");
+        deleteButton.textContent = "x";
+        todoDiv.append(deleteButton);
+
+        deleteButton.addEventListener("click", (e) => {
+            selectedProject.removeToDoItem(todo.id);
+            populateContent(selectedProject);
+            updateProjects();
+        });
 
         content.appendChild(todoDiv);
 
